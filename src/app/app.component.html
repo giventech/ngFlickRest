@@ -1,0 +1,43 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+     
+      <input placeholder="Search a photo" type="search" [formControl]="searchControl">
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="row">
+   <div class="row">
+    </div>  
+  <div class="row">
+    <div *ngFor="let photo of result">
+      <div class="col s4">
+        <div class="row">
+                <div class="col s12 m10">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src={{photo.url}}>
+                      <span class="card-title">{{photo.title}}</span>
+                    </div>
+                    <div class="card-content">
+                      <p><b>author: </b>{{photo.owner}}</p>
+                    </div>
+                    <div class="card-action"  *ngIf="photo.highresurl">
+                      <a href={{photo.highresurl}}>View High Resolution</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+     
+      </div>
+    </div>
+  </div>
+</div>
+
+
